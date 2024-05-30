@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Surfboard Volume Calculator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='wallpaper.jpeg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Surfboard Volume Calculator</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.weight.label(class="form-control-label") }}
+                {{ form.weight(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.skill_level.label(class="form-control-label") }}
+                {{ form.skill_level(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.tail_shape.label(class="form-control-label") }}
+                {{ form.tail_shape(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.city.label(class="form-control-label") }}
+                {{ form.city(class="form-control") }}
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Calculate</button>
+        </form>
+    </div>
+</body>
+</html>
